@@ -1,61 +1,48 @@
 <?php
+    class Employee {
+        private $id;
+        private $firstName;
+        private $lastName;
+        private $gender;
+        private $age;
 
-class Employees {
-  private  $id;
-   private $firstname;
-   private $lastname;
-   private $Age;
-   private $Gender;
+        public function getId(){
+            return $this->id;
+        }
+        public function setId($value){
+            $this->id = $value;
+        }
 
+        public function getFirstName(){
+            return $this->firstName;
+        }
 
-   public function getId(){
-    return $this->Id;
-  }
+        public function setFirstName($value){
+            $this->firstName = $value;
+        }
 
-   public function setId($value){
-     $this->Id=$value;
-  }
+        public function getLastName(){
+            return $this->lastName;
+        }
 
-  public function getfirstname(){
-    return $this->first_name;
-  }
+        public function setLastName($value){
+            $this->lastName= $value;
+        }
 
+        public function getGender(){
+            return $this->gender;
+        }
 
-  public function setfirstname($value){
-    $this->first_name=$value;
- }
+        public function setGender($value){
+            $this->gender= $value;
+        }
 
- public function getlastname(){
-  return $this->last_name;
- }
+        public function getAge(){
+            return $this->age;
+        }
 
- public function setlastname($value){
-  $this->last_name=$value;
-}
-
-
-public function getAge(){
-  return $this->first_name;
- }
-public function setAge($value){
-  $this->first_name=$value;
-}
-  
-
-public function getgender(){
-  return $this->gender;
- }
-public function setgender($value){
-  $this->first_name=$value;
-}
-
-
-
-}
-
-
-
-
-
-
+        public function setAge($value){
+            $this->age = $value;
+        }
+    }
 ?>

@@ -1,5 +1,5 @@
 <?php
-	include 'employee_Manager.php';
+	include 'employeeManager.php';
 
     if(!empty($_POST)){
 		$employee = new Employee();	
@@ -17,8 +17,6 @@
 ?>
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,21 +32,22 @@
         <form method="POST" action="">
 			<div>
 				<label for="inputFName">First Name</label>
-				<input type="text" required="required" id="inputFName" name="fname" placeholder="firstname">
+				<input type="text" required="required" id="inputFName" name="fname" placeholder="First Name">
 				<span></span>
 			</div>
 			
 			<div>
 				<label for="inputLName">Last Name</label>
-				<input type="text" required="required" id="inputLName" name="lname" placeholder="lastname">
+				<input type="text" required="required" id="inputLName" name="lname" placeholder="Last Name">
         		<span></span>
 			</div>
-      <label for="inputAge">Age</label>
-				<input type="number" required="required" class="form-control" id="inputAge" name="Age" placeholder="Age">
+			
+			<div>
+				<label for="inputAge">Age</label>
+				<input type="number" required="required" class="form-control" id="inputAge" name="age" placeholder="Age">
 				<span></span>
 			</div>
-				
-			<div class="form-group">
+				<div class="form-group">
 					<label for="inputGender">Gender</label>
 					<select class="form-control" required="required" id="inputGender" name="gender" >
 						<option>Please Select</option>
@@ -57,8 +56,6 @@
 					</select>
 					<span></span>
         		</div>
-			<div>
-	
     
 			<div class="form-actions">
 					<button type="submit">Create</button>
