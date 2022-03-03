@@ -7,7 +7,7 @@
 
         private function getConnection(){
             if(is_null($this->Connection)){
-                $this->Connection = mysqli_connect('localhost', 'soukayna', '', 'Employee db');
+                $this->Connection = mysqli_connect('localhost', 'soukayna', 'test123', 'employee');
 
                 if(!$this->Connection){
                     $message = 'Connection Error: ' .mysqli_connect_error();
@@ -20,7 +20,7 @@
    
 
         public function getAllEmployees(){
-            $sqlGetData = 'SELECT id, first_name, last_name, age, gender FROM employees_test';
+            $sqlGetData = 'SELECT id, first_name, last_name, age, gender FROM employee';
             $result = mysqli_query($this->getConnection() ,$sqlGetData);
             $employeesList = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -46,7 +46,7 @@
             $gender = $employee->getGender();
 
                  // sql insert query
-        $sqlInsertQuery = "INSERT INTO employees_test(first_name, last_name, age, gender) 
+        $sqlInsertQuery = "INSERT INTO employee(first_name, last_name, age, gender) 
                             VALUES('$firstName', 
                                     '$lastName',
                                     '$age', 
@@ -66,7 +66,7 @@
         public function editEmployee($id, $first_name, $last_name, $gender, $age){
      
             // Update query
-            $sqlUpdateQuery = "UPDATE employees_test SET 
+            $sqlUpdateQuery = "UPDATE employee  SET 
                          first_name='$first_name', 
                          last_name='$last_name', 
                          age='$age', 
@@ -102,7 +102,4 @@
             return $employee;
         }
     }
-
-
-    
-?>
+    ?>
