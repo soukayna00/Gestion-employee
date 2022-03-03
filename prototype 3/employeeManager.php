@@ -7,7 +7,7 @@
 
         private function getConnection(){
             if(is_null($this->Connection)){
-                $this->Connection = mysqli_connect('localhost', 'soukayna', 'test123', 'employee');
+                $this->Connection = mysqli_connect('localhost', 'soukayna','test123', 'employee');
 
                 if(!$this->Connection){
                     $message = 'Connection Error: ' .mysqli_connect_error();
@@ -20,7 +20,7 @@
    
 
         public function getAllEmployees(){
-            $sqlGetData = 'SELECT id, first_name, last_name, age, gender FROM employee';
+            $sqlGetData = 'SELECT id, first_name, last_name, age, gender FROM employee_db';
             $result = mysqli_query($this->getConnection() ,$sqlGetData);
             $employeesList = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -46,7 +46,7 @@
             $gender = $employee->getGender();
 
                  // sql insert query
-        $sqlInsertQuery = "INSERT INTO employee(first_name, last_name, age, gender) 
+        $sqlInsertQuery = "INSERT INTO employee_db(first_name, last_name, age, gender) 
                             VALUES('$firstName', 
                                     '$lastName',
                                     '$age', 
@@ -57,7 +57,7 @@
 
 
         public function deleteEmployee($id){
-            $sqlDeleteQuery = "DELETE FROM employees_test WHERE id= '$id'";
+            $sqlDeleteQuery = "DELETE FROM employee_db WHERE id= '$id'";
 
             mysqli_query($this->getConnection(), $sqlDeleteQuery);
         }
@@ -66,7 +66,7 @@
         public function editEmployee($id, $first_name, $last_name, $gender, $age){
      
             // Update query
-            $sqlUpdateQuery = "UPDATE employee  SET 
+            $sqlUpdateQuery = "UPDATE employee_db SET 
                          first_name='$first_name', 
                          last_name='$last_name', 
                          age='$age', 
@@ -84,7 +84,7 @@
         }
 
         public function getEmployee($id){
-            $sqlGetQuery = "SELECT * FROM employees_test WHERE id= $id";
+            $sqlGetQuery = "SELECT * FROM employee_db WHERE id= $id";
         
             // get result
             $result = mysqli_query($this->getConnection(), $sqlGetQuery);
@@ -102,4 +102,7 @@
             return $employee;
         }
     }
-    ?>
+
+
+    
+?>
