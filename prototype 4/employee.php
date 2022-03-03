@@ -2,34 +2,34 @@
 
 class Employees {
   private  $id;
-   private $first_name;
-   private $last_name;
+   private $firstname;
+   private $lastname;
    private $Age;
    private $Gender;
 
 
-   public function getid(){
-    return $this->id;
+   public function getId(){
+    return $this->Id;
   }
 
-   public function setid($value){
-     $this->id=$value;
+   public function setId($value){
+     $this->Id=$value;
   }
 
-  public function getfirst_name(){
+  public function getfirstname(){
     return $this->first_name;
   }
 
 
-  public function setfirst_name($value){
+  public function setfirstname($value){
     $this->first_name=$value;
  }
 
- public function getlast_name(){
+ public function getlastname(){
   return $this->last_name;
  }
 
- public function setlast_name($value){
+ public function setlastname($value){
   $this->last_name=$value;
 }
 
