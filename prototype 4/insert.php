@@ -1,3 +1,24 @@
+<?php
+	include 'employeeManager.php';
+
+    if(!empty($_POST)){
+		$employee = new Employee();	
+		$employeeManager = new EmployeeManager();
+
+        $employee->setFirstName($_POST['fname']);
+        $employee->setLastName($_POST['lname']);
+        $employee->setAge($_POST['age']);
+        $employee->setGender($_POST['gender']);
+
+		$employeeManager->insertEmployee($employee);
+        header("Location: index.php");
+
+    }
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
