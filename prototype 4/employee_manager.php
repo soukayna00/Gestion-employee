@@ -9,7 +9,7 @@ class EmployeeManager{
     $employeesList = json_decode($file);
     $employees = array();
     foreach($employeesList as $employee_list){
-        $employee = new Employee();
+        $employee = new Employees();
         $employee->setId($employee_list->Id);
         $employee->setFirstName($employee_list->first_name);
         $employee->setLastName($employee_list->last_name);
