@@ -2,15 +2,19 @@
 include 'employee.php';
 
 class EmployeeManager{
-
+  //on cree un variable sous form de array vide
+// on store dans larrray data sous form d'object
+//data de chaque employee 
+//l'ensemble des employees  dans un array est employees
+//les  class contient des methode pour appeller et assigner les valeurs(set et get)
   public function getAllEmployees(){
        
     $file = file_get_contents('employees.json');
     $employeesList = json_decode($file);
     $employees = array();
-    foreach($employeesList as $employee_list){
-        $employee = new Employees();
-        $employee->setId($employee_list->Id);
+    foreach($employeesList as $employee_list){//employee list contain all data
+        $employee = new Employee();
+        $employee->setId($employee_list->Id);//to assign id
         $employee->setFirstName($employee_list->first_name);
         $employee->setLastName($employee_list->last_name);
         $employee->setAge($employee_list->age);
