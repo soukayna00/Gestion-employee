@@ -1,7 +1,6 @@
 <?php
 include 'employeesManager.php';
-
-$employeeManager=new EmployeesManager();
+$employeeManager=new employeesManager();
 $data=$employeeManager->getAllEmployees();
 
 ?>
@@ -14,7 +13,7 @@ $data=$employeeManager->getAllEmployees();
   <title>Document</title>
 </head>
 <body>
-  <a href="index.php">Add new Employees</a>
+  <a href="insert.php">Add new Employees</a>
   <table>
     <tr>
       <th>first name</th>

@@ -26,21 +26,28 @@ class EmployeesManager{
   }
   
   public function getAllEmployees(){
-   $sqlGetData="SELECT ID,first_name,last_name,age FROM employees";
-   $result=mysqli_query($this->getConnect(),$sqlGetData);
-   $datas=mysqli_fetch_all($result,MYSQLI_ASSOC);
-   $dataArray=array();
 
-   foreach($datas as $data){
-         $employe =new Employees();
-         $employe->setId($data['ID']);
-         $employe->setfirstName(($data['first_name']));
-         $employe->setlastName($data['last_name']);
-         $employe->setAge($data['age']);
-    array_push($dataArray,$employe);
-   }
-        return $dataArray;
-  }
+    $sqlGetData = "SELECT ID, first_name, last_name, age FROM employees";
+    $result = mysqli_query($this->getConnect(), $sqlGetData);
+    $datas = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    $dataArray = array();
+
+    foreach($datas as $data){
+
+            $employe = new Employees();
+            $employe->setId($data['ID']);
+            $employe->setfirstName($data['first_name']);
+            $employe->setlastName($data['last_name']);
+            $employe->setAge($data['age']);
+            array_push($dataArray, $employe);
+
+
+    }
+
+    return $dataArray;
+
+}
 
 // delete employee
 public function  deleteEmployee($id){

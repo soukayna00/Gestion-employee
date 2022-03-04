@@ -1,5 +1,5 @@
 <?php
-include  'employeesManager.php';
+include 'employeesManager.php';
 
 
 if(!empty($_POST)){
@@ -23,11 +23,10 @@ if(!empty($_POST)){
 <body>
   <h1>Add Employee</h1>
   <form method="post">
-  <input type="text" name='first_name'required>
-  <input type="text"  name="last_name" required>
-  <input type='text' name="age" required>
-  <input type="submit" value= "add">
-
+  <input type="text" name="first_name" required>
+        <input type ="text" name="last_name" required>
+        <input type="text" name="age" required>
+        <input type="submit"  value ="add">
   </form>
 
 </body>
