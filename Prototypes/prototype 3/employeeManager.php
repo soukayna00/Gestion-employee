@@ -1,5 +1,5 @@
 <?php
-    include 'employee.php';
+ include 'employee.php';
 
     class EmployeeManager {
 
@@ -7,21 +7,42 @@
 
         private function getConnection(){
             if(is_null($this->Connection)){
-                $this->Connection = mysqli_connect('localhost', 'soukayna','test123', 'employee');
-
+                $this->Connection = mysqli_connect('localhost', 'soukayna','test123', 'employee');}
+            else {
                 if(!$this->Connection){
                     $message = 'Connection Error: ' .mysqli_connect_error();
                     throw new Exception($message);
                 }
-            }
+            
             return $this->Connection;
         }
 
-   
+    }
+
+        
+    public function insertEmployee($employee){
+        $firstName = $employee->getfirstName();
+        $lastName = $employee->getlastName();
+        $gender= $employee->getgender());
+        $age = $employee->getAge();
+
+
+        $sqlInsertQuery = "INSERT INTO employees_db(first_name, last_name, gender,age ) 
+        VALUES('$firstName', 
+                '$lastName',
+                '$gender', 
+                '$age')";
+
+       mysqli_query($this->getConnection(), $sqlInsertQuery);
+         }
+
+    
+
+
 
         public function getAllEmployees(){
-            $sqlGetData = 'SELECT id, first_name, last_name, age, gender FROM employee_db';
-            $result = mysqli_query($this->getConnection() ,$sqlGetData);
+            $sqlGetData = 'SELECT id,first_name,last_name,gender,age FROM employees_db';
+            $result = mysqli_query($this->getConnection(),$sqlGetData);
             $employeesList = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
             $employees = array();
@@ -36,30 +57,16 @@
             }
 
             return $employees;
-        }
+          }
 
 
-        public function insertEmployee($employee){
-            $firstName = $employee->getfirstName();
-            $lastName = $employee->getlastName();
-            $gender= $employee->getDepartment();
-            $age = $employee->getAge();
-        
             
     
-                 // sql insert query
-        $sqlInsertQuery = "INSERT INTO employee_db(first_name, last_name, gender,age ) 
-                            VALUES('$firstName', 
-                                    '$lastName',
-                                    '$gender', 
-                                    '$age')";
-
-        mysqli_query($this->getConnection(), $sqlInsertQuery);
-        }
-
+             
+       
 
         public function deleteEmployee($id){
-            $sqlDeleteQuery = "DELETE FROM employee_db WHERE id= '$id'";
+            $sqlDeleteQuery = "DELETE FROM employees_db WHERE id= '$id'";
 
             mysqli_query($this->getConnection(), $sqlDeleteQuery);
         }
@@ -68,7 +75,7 @@
         public function editEmployee($id, $first_name, $last_name, $gender, $age){
      
             // Update query
-            $sqlUpdateQuery = "UPDATE employee_db SET 
+            $sqlUpdateQuery = "UPDATE employees_db SET 
                          first_name='$first_name', 
                          last_name='$last_name', 
                          gender='$gender'
@@ -86,7 +93,7 @@
         }
 
         public function getEmployee($id){
-            $sqlGetQuery = "SELECT * FROM employee_db WHERE id= $id";
+            $sqlGetQuery = "SELECT * FROM employees_db WHERE id= $id";
         
             // get result
             $result = mysqli_query($this->getConnection(), $sqlGetQuery);
@@ -103,8 +110,8 @@
     
             
             return $employee;
-        }
-    }
+      }
+    
 
 
     
