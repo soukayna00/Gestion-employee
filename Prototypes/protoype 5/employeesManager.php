@@ -4,7 +4,7 @@ class EmployeesManager{
   private $connect =Null ;
   private function getConnect(){
     if(is_null($this->connect)){
-      $this->connect=mysqli_connect('localhost','Soukayna','test123','Prototype 3');
+      $this->connect= mysqli_connect('localhost','soukayna','','prototype 3');
     }
     else{
        if(!$this->connect){
