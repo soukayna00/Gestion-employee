@@ -40,11 +40,15 @@
 
 
         public function insertEmployee($employee){
-            $firstName = $employee->getFirstName();
-            $lastName = $employee->getLastName();
+            $firstName = $employee->getfirstName();
+            $lastName = $employee->getlastName();
             $age = $employee->getAge();
-            $gender = $employee->getGender();
-
+            $department = $employee->getDepartment();
+            $occupation = $employee->getOccupation();
+            $salary = $employee->getSalary();
+            $image = $employee->getImage();
+            
+    
                  // sql insert query
         $sqlInsertQuery = "INSERT INTO employee_db(first_name, last_name, age, gender) 
                             VALUES('$firstName', 
