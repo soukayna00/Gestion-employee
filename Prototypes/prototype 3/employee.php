@@ -3,10 +3,10 @@
         private $Id;
         private $FirstName;
         private $LastName;
-        private $Department ;
-        private $Occupation ;
-        private  $Salary ;
-        private  $Image ;
+        private $Gender ;
+        private $Age ;
+       
+
         
 
 
@@ -33,34 +33,21 @@
             $this->LastName= $value;
         }
 
-        public function getDepartement(){
-            return $this->Department;
+        public function getGender(){
+            return $this->Gender;
         }
 
-        public function setDepartement($value){
-            $this->Department= $value;
+        public function setGender($value){
+            $this->Gender= $value;
+        }
+        public function getAge(){
+            return $this->Age;
         }
 
-        public function getOccupation(){
-            return $this->Occupation;
+        public function setAge($value){
+            $this->Age= $value;
         }
 
-        public function setOccupation($value){
-            $this->Occupation = $value;
-        }
-        public function getSalary(){
-            return $this->Salary;
-        }
-
-        public function setSalary($value){
-            $this->Salary = $value;
-        }
-        public function getImage(){
-            return $this->Image;
-        }
-
-        public function setImage($value){
-            $this->Image = $value;
-        }
+        
     }
 ?>

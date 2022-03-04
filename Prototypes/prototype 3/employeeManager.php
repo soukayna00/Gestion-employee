@@ -42,19 +42,17 @@
         public function insertEmployee($employee){
             $firstName = $employee->getfirstName();
             $lastName = $employee->getlastName();
+            $gender= $employee->getDepartment();
             $age = $employee->getAge();
-            $department = $employee->getDepartment();
-            $occupation = $employee->getOccupation();
-            $salary = $employee->getSalary();
-            $image = $employee->getImage();
+        
             
     
                  // sql insert query
-        $sqlInsertQuery = "INSERT INTO employee_db(first_name, last_name, age, gender) 
+        $sqlInsertQuery = "INSERT INTO employee_db(first_name, last_name, gender,age ) 
                             VALUES('$firstName', 
                                     '$lastName',
-                                    '$age', 
-                                    '$gender')";
+                                    '$gender', 
+                                    '$age')";
 
         mysqli_query($this->getConnection(), $sqlInsertQuery);
         }
@@ -73,8 +71,8 @@
             $sqlUpdateQuery = "UPDATE employee_db SET 
                          first_name='$first_name', 
                          last_name='$last_name', 
-                         age='$age', 
                          gender='$gender'
+                         age='$age', 
                          WHERE id=$id";
      
              // Make query 
@@ -100,8 +98,9 @@
             $employee->setId($employee_data['id']);
             $employee->setFirstName($employee_data['first_name']);
             $employee->setLastName($employee_data['last_name']);
-            $employee->setAge($employee_data['age']);
             $employee->setGender($employee_data['gender']);
+            $employee->setAge($employee_data['age']);
+    
             
             return $employee;
         }

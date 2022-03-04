@@ -7,8 +7,9 @@
 
         $employee->setFirstName($_POST['fname']);
         $employee->setLastName($_POST['lname']);
+				$employee->setGender($_POST['gender']);
         $employee->setAge($_POST['age']);
-        $employee->setGender($_POST['gender']);
+      
 
 		$employeeManager->insertEmployee($employee);
      
@@ -42,13 +43,8 @@
 				<input type="text" required="required" id="inputLName" name="lname" placeholder="Last Name">
         		<span></span>
 			</div>
-			
-			<div>
-				<label for="inputAge">Age</label>
-				<input type="number" required="required" class="form-control" id="inputAge" name="age" placeholder="Age">
-				<span></span>
-			</div>
-				<div class="form-group">
+			   
+			<div class="form-group">
 					<label for="inputGender">Gender</label>
 					<select class="form-control" required="required" id="inputGender" name="gender" >
 						<option>Please Select</option>
@@ -57,6 +53,13 @@
 					</select>
 					<span></span>
         		</div>
+
+			<div>
+				<label for="inputAge">Age</label>
+				<input type="number" required="required" class="form-control" id="inputAge" name="age" placeholder="Age">
+				<span></span>
+			</div>
+		
     
 			<div class="form-actions">
 					<button type="submit">Create</button>
