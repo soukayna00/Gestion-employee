@@ -21,11 +21,12 @@
         <a href="insert.php">Insert Data</a>
         <table>
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Action</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>DatedeNaissance</th>
+                <th>Departement</th>
+                <th>Salaire</th>
+                <th>Fonction</th>
             </tr>
 
             <?php
@@ -34,8 +35,11 @@
 
             <tr>
                 <td><?= $employee->getNom()?></td>
-                <td><?= $employee->getlname()?></td>
-                <td><?= $employee->getage()?></td>
+                <td><?= $employee->getPrenom()?></td>
+                <td><?= $employee->getDatedeNaissance()?></td>
+                <td><?= $employee->getDepartement()?></td>
+                <td><?= $employee->getSalaire()?></td>
+                <td><?= $employee->getFonction()?></td>
                 <td>
                     <a href="edit.php?id=<?php echo $employee->getId() ?>">Edit</a>
                     <a href="delete.php?id=<?php echo $employee->getId() ?>">delete</a>

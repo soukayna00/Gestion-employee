@@ -6,8 +6,12 @@
 		$employeeManager = new EmployeeManager();
 
         $employee->setNom($_POST['Nom']);
-        $employee->setlname($_POST['lname']);
-        $employee->setage($_POST['age']);
+        $employee->setPrenom($_POST['Prenom']);
+        $employee->setDatedeNaissance($_POST['DatedeNaissance']);
+				$employee->setDepartement($_POST['Departement']);
+				$employee->setSalaire($_POST['Salaire']);
+				$employee->setFonction($_POST['Fonction']);
+
 
 		$employeeManager->insertEmployee($employee);
      
@@ -31,20 +35,36 @@
 		<div><h3>Create a User</h3>
         <form method="POST" action="">
 			<div>
-				<label for="inputNom">First Name</label>
-				<input type="text" required="required" id="inputNom" name="NOM" placeholder="First Name">
+				<label for="inputNom">Nom</label>
+				<input type="text" required="required" id="inputNom" name="Nom" placeholder="Nom">
 				<span></span>
 			</div>
 			
 			<div>
-				<label for="inputlname">Last Name</label>
-				<input type="text" required="required" id="inputlname" name="lname" placeholder="Last Name">
+				<label for="inputlname">Prenom</label>
+				<input type="text" required="required" id="inputPrenom" name="Prenom" placeholder="Prenom">
         		<span></span>
 			</div>
 			
 			<div>
-				<label for="inputage">Age</label>
-				<input type="number" required="required" class="form-control" id="inputage" name="age" placeholder="Age">
+				<label for="inputage">Date de Naissance</label>
+				<input type="number" required="required" class="form-control" id="inputage" name="Date de Naissance" placeholder="Date de naissance">
+				<span></span>
+			</div>
+
+			<div>
+				<label for="inputage">Departement</label>
+				<input type="number" required="required" class="form-control" id="inputage" name="Departement" placeholder="Departement">
+				<span></span>
+			</div>
+			<div>
+				<label for="inputage">Salaire</label>
+				<input type="number" required="required" class="form-control" id="inputage" name="Salaire" placeholder="Salaire">
+				<span></span>
+			</div>
+			<div>
+				<label for="inputage">Fonction</label>
+				<input type="number" required="required" class="form-control" id="inputage" name="Fonction" placeholder="Fonction">
 				<span></span>
 			</div>
 		

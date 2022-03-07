@@ -7,7 +7,7 @@
 
         private function getConnection(){
             if(is_null($this->Connection)){
-                $this->Connection = mysqli_connect('localhost', 'soukayna', '', 'Gestion employee');
+                $this->Connection = mysqli_connect('localhost', 'soukayna', '', 'gestion employee');
 
                 if(!$this->Connection){
                     $message = 'Connection Error: ' .mysqli_connect_error();
@@ -20,7 +20,7 @@
    
 
         public function getAllEmployees(){
-            $sqlGetData = 'SELECT id,Nom, lname, age FROM person1';
+            $sqlGetData = 'SELECT id,Nom,Prenom,DatedeNaissance,Departement,Salaire,Fonction FROM person1';
             $result = mysqli_query($this->getConnection() ,$sqlGetData);
             $employeesList = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -29,8 +29,11 @@
                 $employee = new Employee();
                 $employee->setId($employee_list['id']);
                 $employee->setNom($employee_list['Nom']);
-                $employee->setlname($employee_list['lname']);
-                $employee->setage($employee_list['age']);
+                $employee->setPrenom($employee_list['Prenom']);
+                $employee->setDatedeNaissance($employee_list['DatedeNaissance']);
+                $employee->setDepartement($employee_list['Departement']);
+                $employee->setSalaire($employee_list['Salaire']);
+                $employee->setFonction($employee_list['Fonction']);
                 array_push($employees, $employee);
             }
 
@@ -40,15 +43,16 @@
 
         public function insertEmployee($employee){
             $Nom = $employee->getNom();
-            $lname = $employee->getlname();
-            $age = $employee->getage();
+            $Prenom = $employee->getPrenom();
+            $DatedeNaissance= $employee->getDatedeNaissance();
+            $Departement= $employee->getDepartement();
+            $Salaire= $employee->getSalaire();
+            $Fonction= $employee->getFonction();
 
 
                  // sql insert query
-        $sqlInsertQuery = "INSERT INTO person1(Nom, lname, age) 
-                            VALUES('$Nom', 
-                                    '$lname',
-                                    '$age'
+        $sqlInsertQuery = "INSERT INTO person1(Nom,Prenom,DatedeNaissance ,Departement,Salaire,Fonction) 
+                            VALUES('$Nom','$Prenom','$DatedeNaissance,'$Departement',$Salaire',$Fonction
                                     )";
 
         mysqli_query($this->getConnection(), $sqlInsertQuery);
@@ -62,13 +66,16 @@
         }
 
 
-        public function editEmployee($id, $Nom, $lname, $age){
+        public function editEmployee($Nom,$Prenom,$DatedeNaissance,$Departement,$Salaire,$Fonction){
      
             // Update query
             $sqlUpdateQuery = "UPDATE person1 SET 
                          Nom='$Nom', 
-                         lname='$lname', 
-                         age='$age' 
+                         Prenom='$Prenom', 
+                         DatedeNaissance='$DatedeNaissance',
+                         departement='$Departement',
+                         salaire='$Salaire',
+                         Fonction='$Fonction',
                          WHERE id=$id";
      
              // Make query 
@@ -93,8 +100,11 @@
             $employee = new Employee();
             $employee->setId($employee_data['id']);
             $employee->setNom($employee_data['Nom']);
-            $employee->setlname($employee_data['lname']);
-            $employee->setage($employee_data['age']);
+            $employee->setPrenom($employee_data['Prenom']);
+            $employee->setDatedeNaissance($employee_data['DatedeNaissance']);
+            $employee->setDepartement($employee_data['Departement']);
+            $employee->setSalaire($employee_data['Salaire']);
+            $employee->setFonction($employee_data['Fonction']);
             
             return $employee;
         }

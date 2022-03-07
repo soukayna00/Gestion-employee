@@ -2,8 +2,11 @@
     class Employee {
         private $id;
         private $Nom;
-        private $lname;
-        private $age;
+        private $Prenom;
+        private $DatedeNaissance;
+        private $Departement;
+        private $Salaire;
+        private $Fonction;
         
 
         public function getId(){
@@ -14,29 +17,48 @@
         }
 
         public function getNom(){
-            return $this->firstName;
+            return $this->Nom;
         }
 
         public function setNom($value){
-            $this->firstName = $value;
+            $this->Nom = $value;
         }
 
-        public function getlname(){
-            return $this->lastName;
+        public function getPrenom(){
+            return $this->Prenom;
         }
 
-        public function setlname($value){
-            $this->lastName= $value;
+        public function setPrenom($value){
+            $this->Prenom= $value;
         }
 
-
-
-        public function getage(){
-            return $this->age;
+        public function getDatedeNaissance(){
+            return $this->DatedeNaissance;
         }
 
-        public function setage($value){
-            $this->age = $value;
+        public function setDatedeNaissance($value){
+            $this->DatedeNaissance = $value;
+        }
+        public function getDepartement(){
+            return $this->Departement;
+        }
+
+        public function setDepartement($value){
+            $this->Departement = $value;
+        }
+        public function getSalaire(){
+            return $this->Salaire;
+        }
+
+        public function setSalaire($value){
+            $this->Salaire = $value;
+        }
+        public function getFonction(){
+            return $this->Fonction;
+        }
+
+        public function setFonction($value){
+            $this->Fonction = $value;
         }
     }
    

@@ -12,11 +12,15 @@
     if(isset($_POST['update'])){
 		$id = $_POST['id'];
 		$Nom= $_POST['Nom'];
-		$lname = $_POST['lname'];
-		$age = $_POST['age'];
+		$Prenom = $_POST['Prenom'];
+		$DatedeNaissance = $_POST['DatedeNaissance'];
+		$Departement = $_POST['Departement'];
+		$Salaire = $_POST['Salaire'];
+		$Fonction= $_POST['Fonction'];
+
   
 
-        $employeeManager->editEmployee($id, $Nom, $lname, $age);
+        $employeeManager->editEmployee($id, $Nom, $Prenom, $DatedeNaissance,$Departement,$Salaire,$Fonction);
 
         header('Location: index.php');
         
@@ -41,41 +45,81 @@
         <form method="POST" action="">
 			<input type="hidden" id='id' name='id' value=<?php echo $employee->getId() ?>>
 			<div>
-				<label for="inputfname">First Name</label>
+				<label for="inputNom">Nom</label>
 				<input	type="text" 
 						required="required" 
-						id="inputfname" 
-						value=<?php echo $employee->getfname()?> 
-						name="fname" 
-						placeholder="First Name"
+						id="inputNom" 
+						value=<?php echo $employee->getNom()?> 
+						name="Nom" 
+						placeholder="Nom"
 					>
 				<span></span>
 			</div>
 			
 			<div>
-				<label for="inputlname">Last Name</label>
+				<label for="inputPrenom">Prenom</label>
 				<input	type="text" 
 						required="required" 
-						id="inputlname" 
-						value=<?php echo $employee->getlname()?> 
-						name="lname" 
-						placeholder="Last Name"
+						id="inputPrenom" 
+						value=<?php echo $employee->getPrenom()?> 
+						name="Prenom" 
+						placeholder="Prenom"
 					>
         		<span></span>
 			</div>
 			
 			<div>
-				<label for="inputage">Age</label>
+				<label for="inputage">Date de Naissance</label>
 				<input	type="number" 
 						required="required" 
 						class="form-control" 
 						id="inputage" 
-						value=<?php echo $employee->getage()?> 
-						name="age" 
-						placeholder="Age"
+						value=<?php echo $employee->getDatedeNaissance()?> 
+						name="DatedeNaissance" 
+						placeholder="DatedeNaissance"
 					>
 				<span></span>
 			</div>
+			<div>
+				<label for="inputage">Departement</label>
+				<input	type="number" 
+						required="required" 
+						class="form-control" 
+						id="inputage" 
+						value=<?php echo $employee->getDepartement()?> 
+						name="Departement" 
+						placeholder="Departement"
+					>
+				<span></span>
+			</div>
+
+			<div>
+				<label for="inputage">Salaire</label>
+				<input	type="number" 
+						required="required" 
+						class="form-control" 
+						id="inputage" 
+						value=<?php echo $employee->getSalaire()?> 
+						name="Salaire" 
+						placeholder="Salaire"
+					>
+				<span></span>
+			</div>
+			<div>
+				<label for="inputage">Fonction</label>
+				<input	type="number" 
+						required="required" 
+						class="form-control" 
+						id="inputage" 
+						value=<?php echo $employee->getFonction()?> 
+						name="Fonction" 
+						placeholder="Fonction"
+					>
+				<span></span>
+			</div>
+			
+			
+			
 				
     
 			<div class="form-actions">
