@@ -2,6 +2,7 @@
 include 'employeesManager.php';
 
 
+
 if(!empty($_POST)){
   $employee= new Employees();
   $employeeManager=new EmployeesManager();
@@ -23,8 +24,11 @@ if(!empty($_POST)){
 <body>
   <h1>Add Employee</h1>
   <form method="post">
-  <input type="text" name="first_name" required>
+       <label for="firstname">first name</label>
+       <input type="text" name="first_name" required>
+        <label for="lastname">last name</label>
         <input type ="text" name="last_name" required>
+        <label for="age">age</label>
         <input type="text" name="age" required>
         <input type="submit"  value ="add">
   </form>

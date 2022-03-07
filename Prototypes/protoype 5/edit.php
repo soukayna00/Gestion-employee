@@ -7,8 +7,8 @@ if(isset($_GET['id'])){
 
 if(isset($_POST['modify'])){
   $id=$_POST['id'];
-  $first_name=$_POST['first_name'];
-  $last_name=$_POST['last_name'];
+  $first_name=$_POST['firstName'];
+  $last_name=$_POST['lastName'];
   $age=$_POST['age'];
   $employeeManager->modifyEmployee($id,$first_name,$last_name,$age);
   header('location:index.php');
@@ -23,13 +23,14 @@ if(isset($_POST['modify'])){
   <title>Document</title>
 </head>
 <body>
-  <form method="post">
-    <input type="text" name='id'        value=<?php echo  $employee->getId()?>><br> 
-    <input type="text" name='firstName' value=<?php echo  $employee->getfirstName()?>><br>
-    <input type="text" name ='lastName' value=<?php echo  $employee->getlastName()?>><br>
-    <input type="text" name ='age'      value=<?php echo  $employee->getAge()?>><br> 
-    <input type="submit" value="modify" name=value>
-    <a href="index.php">cancel</a>
-  </form>
+<form method="post">
+        <input type="text" name="id" value=<?php echo $employee->getId() ?>><br>
+        <input type="text" name="firstName" value=<?php echo $employee->getfirstName()  ?>><br>
+        <input type="text" name="lastName"  value=<?php echo $employee->getlastName()  ?>><br>
+        <input type="text"  name="age" value= <?php echo $employee->getAge()?>><br>
+        <input type="submit" value="modify" name="modify">
+        <a href="index.php">cancel</a>
+    </form>
+    
 </body>
 </html>

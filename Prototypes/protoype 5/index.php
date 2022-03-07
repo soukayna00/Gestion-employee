@@ -13,8 +13,7 @@ $data=$employeeManager->getAllEmployees();
   <title>Document</title>
 </head>
 <body>
-  <a href="/insert.php">
-    add new Employees </a>
+  <a href="/insert.php"> add new Employees </a>
   <table>
     <tr>
       <th>first name</th>
