@@ -41,30 +41,30 @@
 			</div>
 			
 			<div>
-				<label for="inputlname">Prenom</label>
+				<label for="inputPrenom">Prenom</label>
 				<input type="text" required="required" id="inputPrenom" name="Prenom" placeholder="Prenom">
         		<span></span>
 			</div>
 			
 			<div>
-				<label for="inputage">Date de Naissance</label>
-				<input type="number" required="required" class="form-control" id="inputage" name="Date de Naissance" placeholder="Date de naissance">
+				<label for="inputDatedeNaissance">Date de Naissance</label>
+				<input type="date" required="required" class="form-control" id="inputDatedeNaissance" name="Date de Naissance" placeholder="Date de naissance">
 				<span></span>
 			</div>
 
 			<div>
-				<label for="inputage">Departement</label>
-				<input type="number" required="required" class="form-control" id="inputage" name="Departement" placeholder="Departement">
+				<label for="inputDepartement">Departement</label>
+				<input type="text" required="required" class="form-control" id="inputDepartement" name="Departement" placeholder="Departement">
 				<span></span>
 			</div>
 			<div>
-				<label for="inputage">Salaire</label>
-				<input type="number" required="required" class="form-control" id="inputage" name="Salaire" placeholder="Salaire">
+				<label for="inputSalaire">Salaire</label>
+				<input type="number" required="required" class="form-control" id="inputSalaire" name="Salaire" placeholder="Salaire">
 				<span></span>
 			</div>
 			<div>
-				<label for="inputage">Fonction</label>
-				<input type="number" required="required" class="form-control" id="inputage" name="Fonction" placeholder="Fonction">
+				<label for="inputFonction">Fonction</label>
+				<input type="text" required="required" class="form-control" id="inputFonction" name="Fonction" placeholder="Fonction">
 				<span></span>
 			</div>
 		
