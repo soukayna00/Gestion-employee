@@ -7,7 +7,7 @@
 
         private function getConnection(){
             if(is_null($this->Connection)){
-                $this->Connection = mysqli_connect('localhost', 'soukayna','','gestion employee');
+                $this->Connection = mysqli_connect('localhost','soukayna','','gestion employee');
 
                 if(!$this->Connection){
                     $message = 'Connection Error: ' .mysqli_connect_error();

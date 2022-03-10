@@ -48,7 +48,7 @@
 			
 			<div>
 				<label for="inputDatedeNaissance">Date de Naissance</label>
-				<input type="date" required="required" class="form-control" id="inputDatedeNaissance" name="Date de Naissance" placeholder="Date de naissance">
+				<input type="date" required="required" class="form-control" id="inputDatedeNaissance" name="DatedeNaissance" placeholder="DatedeNaissance">
 				<span></span>
 			</div>
 
