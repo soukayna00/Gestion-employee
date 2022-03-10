@@ -65,17 +65,17 @@
         }
 
 
-        public function editEmployee($Nom,$Prenom,$DatedeNaissance,$Departement,$Salaire,$Fonction){
+        public function editEmployee($id,$Nom,$Prenom,$DatedeNaissance,$Departement,$Salaire,$Fonction){
      
             // Update query
             $sqlUpdateQuery = "UPDATE person1 SET 
                          Nom='$Nom', 
                          Prenom='$Prenom', 
                          DatedeNaissance='$DatedeNaissance',
-                         departement='$Departement',
-                         salaire='$Salaire',
-                         Fonction='$Fonction',
-                         WHERE id=$id";
+                         Departement='$Departement',
+                         Salaire='$Salaire',
+                         Fonction='$Fonction'
+                         WHERE id= $id";
      
              // Make query 
              mysqli_query($this->getConnection(), $sqlUpdateQuery);
@@ -84,8 +84,7 @@
                  $msg = 'Erreur' . mysqli_errno($this->getConnection());
                  throw new Exception($msg);
              }
-       
-        }
+       }
 
         public function getEmployee($id){
             $sqlGetQuery = "SELECT * FROM person1 WHERE id= $id";
