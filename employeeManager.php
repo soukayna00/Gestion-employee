@@ -19,7 +19,7 @@
 
         
         public function getAllEmployees(){
-            $sqlGetData = 'SELECT * FROM employees';
+            $sqlGetData = 'SELECT * FROM person2';
             $result = mysqli_query($this->getConnection() ,$sqlGetData);
             $employeesList = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
